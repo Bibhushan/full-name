@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <form id='myForm' onSubmit={handleFormSubmit}>
         <h1>Full Name Display</h1>
-        <p><span>First Name: </span><input id='first-name' type='text' onChange={handleFirstName}/></p>
+        <p><span>First Name: </span><input type='text' onChange={handleFirstName}/></p>
         <p><span>Last Name: </span><input type='text' onChange={handleLastName}/></p>
         <button type='submit'>Submit</button>
         {fullName && <p>Full Name:{" " + fullName}</p>}
