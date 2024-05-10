@@ -39,7 +39,7 @@ function App() {
         <h1>Full Name Display</h1>
         <p><span>First Name: </span><input type='text' onChange={handleFirstName}/></p>
         <p><span>Last Name: </span><input type='text' onChange={handleLastName}/></p>
-        <button onClick={handleFullName}>Submit</button>
+        <button type='submit' onClick={handleFullName}>Submit</button>
         {fullName && <p>{fullName}</p>}
       </form>
       {/* <header className="App-header">
