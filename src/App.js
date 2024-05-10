@@ -16,7 +16,24 @@ function App() {
     setLastName(e.target.value);
   }
 
-  const handleFullName = (e)=>{
+  // const handleFullName = ()=>{
+  //   let name = null;
+
+  //   if (firstName === ''){
+  //     console.log('first name is null');
+  //     // setFullName(null);
+  //   } else if (lastName === ''){
+  //     console.log('last name is null');
+  //     // setFullName(null);
+  //   } else {
+  //     name = firstName + " " + lastName;
+  //   }
+  //   return name;
+  // }
+
+  const handleFormSubmit = (e)=>{
+    e.preventDefault();
+
     let name = null;
 
     if (firstName === ''){
@@ -28,20 +45,16 @@ function App() {
     } else {
       name = firstName + " " + lastName;
     }
-    return name;
-  }
-
-  const handleFormSubmit = (e)=>{
-    e.preventDefault();
-    setFullName(handleFullName);
+  
+    setFullName(name);
   }
 
   return (
     <div className="App">
       <form id='myForm' onSubmit={handleFormSubmit}>
         <h1>Full Name Display</h1>
-        <p><span>First Name: </span><input type='text' onChange={handleFirstName}/></p>
-        <p><span>Last Name: </span><input type='text' onChange={handleLastName}/></p>
+        <p><label>First Name: <input type='text' onChange={handleFirstName}/></label></p>
+        <p><label>Last Name: <input type='text' onChange={handleLastName}/></label></p>
         <button type='submit'>Submit</button>
         {fullName && <p>Full Name:{" " + fullName}</p>}
       </form>
